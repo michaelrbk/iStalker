@@ -76,6 +76,8 @@ class ResultsViewController: UIViewController {
                 println("rss: " + socialProfile["rss"].string!)
                 println("following: " + socialProfile["following"].string!)
                 println("followers: " + socialProfile["followers"].string!)
+                
+                println("photo.url: " + facade.getPhotoURL(c, typeId: socialProfile["typeId"].string!)!)
             }
         } else {
             println("Sem socialProfiles")
