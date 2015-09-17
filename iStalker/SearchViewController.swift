@@ -14,6 +14,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     //TODO: Ver como documentar métodos.
     //TODO: Colocar ícone do app.
     //TODO: Copiar retorno do web service e mockar na aplicação para não estourar a cota de chamadas.
+    //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
 
     @IBOutlet weak var email: UITextField!
     

@@ -22,7 +22,7 @@ class ResultsViewController: UIViewController {
     }
     
     func setContactInView(contact : JSON) {
-        self.labelTeste.text = contact["args"]["email"].string
+        self.labelTeste.text = contact["contactInfo"]["fullName"].string
     }
 
 }

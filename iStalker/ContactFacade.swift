@@ -15,18 +15,11 @@ class ContactFacade {
     var rvc : ResultsViewController?
     
      func findContact(email: String) {
-        
-        var contact: JSON = nil
-//        Alamofire.request(.GET, "https://api.fullcontact.com/v2/person.json", parameters: ["apiKey": "252a1ebb9708464c", "email" : "bart@fullcontact.com"])
-//            .responseJSON { _, _, JSON, _ in
-//                println(JSON)
-//        }
-        
-        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["apiKey": "252a1ebb9708464c", "email" : "bart@fullcontact.com"])
+        //email teste: "bart@fullcontact.com"
+        Alamofire.request(.GET, "https://api.fullcontact.com/v2/person.json", parameters: ["apiKey": "252a1ebb9708464c", "email" : email])
             .responseJSON { _, _, json, _ in
-            contact = JSON(json!)
-            //print(contact["args"]["email"].string)
-                self.rvc?.setContactInView(contact)
+            self.rvc?.setContactInView(JSON(json!))
         }
+        
     }
 }
