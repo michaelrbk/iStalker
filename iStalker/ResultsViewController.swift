@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class ResultsViewController: UIViewController {
     
+    //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
+    
     var email: UITextField!
     var facade = ContactFacade()
     

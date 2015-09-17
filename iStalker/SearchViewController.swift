@@ -9,12 +9,10 @@
 import UIKit
 
 class SearchViewController: UIViewController,UITextFieldDelegate {
-    //TODO: Implementar o delegate pra esconder o teclado quando tocar na tela.
     //TODO: Se o serviço retornar pra tentar em 2min, posteriormente enviar notificação. Quando clicar na notificação abrir a tela de resultado.
     //TODO: Ver como documentar métodos.
     //TODO: Colocar ícone do app.
     //TODO: Copiar retorno do web service e mockar na aplicação para não estourar a cota de chamadas.
-    //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
 
     @IBOutlet weak var email: UITextField!
     
@@ -32,6 +30,10 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
             var rvc = segue.destinationViewController as! ResultsViewController
             rvc.email = email
         }
+    }
+    
+    @IBAction func hideKeyboard(sender: AnyObject) {
+        self.view.endEditing(true)
     }
     
     //Função utilizada para validar se a próxima interface pode ser chamada
