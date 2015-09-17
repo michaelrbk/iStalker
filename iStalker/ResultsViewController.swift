@@ -17,12 +17,43 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var labelTeste: UILabel!
     
     override func viewDidLoad() {
+        
         facade.rvc = self
         facade.findContact(email.text)
     }
     
     func setContactInView(contact : JSON) {
-        self.labelTeste.text = contact["contactInfo"]["fullName"].string
+ 
+        switch (contact["status"].intValue) {
+            case 200:
+                showContact(contact)
+            case 202:
+                showSearchContactLaterAlert()
+            case 404:
+                showContactNotFoundAlert()
+            default:
+                showErrorAlert()
+        }
+    }
+    
+    func showContact(c : JSON) {
+        
+        self.labelTeste.text = c["contactInfo"]["fullName"].string
+        print(c["contactInfo"]["fullName"])
+    }
+    
+    func showSearchContactLaterAlert() {
+        Utils.showAlert("Estamos preparando os dados desta pessoa. Procure novamente em 5 minutos.")
+        //TODO: Voltar para tela de busca.
     }
 
+    func showContactNotFoundAlert() {
+        Utils.showAlert("Pessoa não encontrada.")
+        //TODO: Voltar para tela de busca.
+    }
+    
+    func showErrorAlert() {
+        Utils.showAlert("Ocorreu um erro ao buscar esta pessoa.")
+        //TODO: Voltar para tela de busca.
+    }
 }

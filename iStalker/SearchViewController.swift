@@ -39,13 +39,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         if identifier == "showResultsSegue" {
         
             if (email.text.isEmpty || !email.text.isEmail() ) {
-        
-                let alert = UIAlertView()
-                alert.title = "Alerta"
-                alert.message = "Email inválido"
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-            
+                Utils.showAlert("Email inválido")
                 return false
             }
             else

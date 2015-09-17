@@ -11,7 +11,7 @@
 		704585EE1BAA151000C12F68 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 704585E61BAA150700C12F68 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70527DF91BA7B65E0020C68E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70527DF81BA7B65E0020C68E /* ResultsViewController.swift */; };
 		70646C9A1BA86F91005F14E3 /* ContactFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70646C991BA86F91005F14E3 /* ContactFacade.swift */; };
-		70646C9C1BA86FB2005F14E3 /* ContactJSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70646C9B1BA86FB2005F14E3 /* ContactJSONHelper.swift */; };
+		70646C9C1BA86FB2005F14E3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70646C9B1BA86FB2005F14E3 /* Utils.swift */; };
 		70983C3F1BAA0F3D00099492 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70983C381BAA0F3400099492 /* Alamofire.framework */; };
 		70983C401BAA0F3D00099492 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70983C381BAA0F3400099492 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		70C9011F1BA785C50035C223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C9011E1BA785C50035C223 /* AppDelegate.swift */; };
@@ -121,7 +121,7 @@
 		704585DB1BAA150700C12F68 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-2.2.1/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		70527DF81BA7B65E0020C68E /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		70646C991BA86F91005F14E3 /* ContactFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactFacade.swift; sourceTree = "<group>"; };
-		70646C9B1BA86FB2005F14E3 /* ContactJSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactJSONHelper.swift; sourceTree = "<group>"; };
+		70646C9B1BA86FB2005F14E3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		70983C301BAA0F3400099492 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-1.3.1/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		70C901191BA785C50035C223 /* iStalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C9011D1BA785C50035C223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,14 +174,6 @@
 			name = Facade;
 			sourceTree = "<group>";
 		};
-		70646C971BA86DBB005F14E3 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				70646C9B1BA86FB2005F14E3 /* ContactJSONHelper.swift */,
-			);
-			name = DTO;
-			sourceTree = "<group>";
-		};
 		70646C981BA86DEF005F14E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +217,7 @@
 		70C9011B1BA785C50035C223 /* iStalker */ = {
 			isa = PBXGroup;
 			children = (
-				70646C971BA86DBB005F14E3 /* DTO */,
+				70646C9B1BA86FB2005F14E3 /* Utils.swift */,
 				70646C951BA86D9A005F14E3 /* Facade */,
 				70C9011E1BA785C50035C223 /* AppDelegate.swift */,
 				70646C981BA86DEF005F14E3 /* Controller */,
@@ -437,7 +429,7 @@
 				70C901211BA785C50035C223 /* SearchViewController.swift in Sources */,
 				70C9011F1BA785C50035C223 /* AppDelegate.swift in Sources */,
 				70646C9A1BA86F91005F14E3 /* ContactFacade.swift in Sources */,
-				70646C9C1BA86FB2005F14E3 /* ContactJSONHelper.swift in Sources */,
+				70646C9C1BA86FB2005F14E3 /* Utils.swift in Sources */,
 				70527DF91BA7B65E0020C68E /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
