@@ -12,20 +12,19 @@ import SwiftyJSON
 
 class ContactFacade {
     
-    func buscarContato(email: String) -> String {
-        
+    func findContact(email: String) -> JSON {
+        var contact: JSON = nil
 //        Alamofire.request(.GET, "https://api.fullcontact.com/v2/person.json", parameters: ["apiKey": "252a1ebb9708464c", "email" : "bart@fullcontact.com"])
 //            .responseJSON { _, _, JSON, _ in
 //                println(JSON)
 //        }
         
+        //TODO Ver como transformar a chamada em síncrona, pois o print 2 sai antes do 1
         Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["apiKey": "252a1ebb9708464c", "email" : "bart@fullcontact.com"])
             .responseJSON { _, _, json, _ in
-            var json = JSON(json!)
-            print(json["args"]["email"])
+            contact = JSON(json!)
+            print(contact["args"]["email"].string)
         }
-        
-        //TODO: Ver se é melhor trabalhar com DTO ou com dictionary retornado pelo Alamofire.
-        return "Ola, " + email
+        return contact
     }
 }

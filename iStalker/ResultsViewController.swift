@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class ResultsViewController: UIViewController {
     
@@ -16,7 +18,15 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var labelTeste: UILabel!
     
     override func viewDidLoad() {
-        labelTeste.text = facade.buscarContato(email.text)
+        //var contact : JSON = facade.findContact(email.text)
+        
+        //TODO a chamada é assincrona. Ver se é possível manter no facade
+        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["apiKey": "252a1ebb9708464c", "email" : "bart@fullcontact.com"])
+            .responseJSON { _, _, json, _ in
+                var contact = JSON(json!)
+                self.labelTeste.text = contact["args"]["email"].string
+        }
+        
     }
 
 }
