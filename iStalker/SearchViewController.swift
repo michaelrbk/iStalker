@@ -8,19 +8,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-    //TODO: Implementar o delegate pro ENTER realizar a mesma acao do clique no botao Stalk.
+class SearchViewController: UIViewController,UITextFieldDelegate {
     //TODO: Implementar o delegate pra esconder o teclado quando tocar na tela.
     //TODO: Se o serviço retornar pra tentar em 2min, posteriormente enviar notificação. Quando clicar na notificação abrir a tela de resultado.
     //TODO: Ver como documentar métodos.
     //TODO: Colocar ícone do app.
-    //TODO: Precisa validar formato do e-mail ou o retorno da API é o suficiente.
     //TODO: Copiar retorno do web service e mockar na aplicação para não estourar a cota de chamadas.
 
     @IBOutlet weak var email: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.email.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,30 +33,44 @@ class SearchViewController: UIViewController {
         }
     }
     
+    //Função utilizada para validar se a próxima interface pode ser chamada
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "showResultsSegue" {
         
-        if (email.text.isEmpty || !email.text.isEmail() ) {
+            if (email.text.isEmpty || !email.text.isEmail() ) {
         
-        let alert = UIAlertView()
-        alert.title = "Alerta"
-        alert.message = "Email inválido"
-        alert.addButtonWithTitle("Ok")
-        alert.show()
-        
-        return false
-    }
-        
-        else {
-        return true
+                let alert = UIAlertView()
+                alert.title = "Alerta"
+                alert.message = "Email inválido"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            
+                return false
+            }
+            else
+            {
+                return true
+            }
         }
-        }
-        
-        // by default, transition
+    
+
         return true
     }
+    
+    //Função para o enter chamar a próxima tela
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+            
+            email.resignFirstResponder()
+            if(self.shouldPerformSegueWithIdentifier("showResultsSegue", sender: self)){
+                    self.performSegueWithIdentifier("showResultsSegue", sender: self)
+            }
+            return true
+    }
+    
+    
 }
 
+// Extensão da String para validar se a string é um email
 extension String {
     func isEmail() -> Bool {
     let regex = NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive, error: nil)
