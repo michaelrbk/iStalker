@@ -12,22 +12,34 @@
 	<dict>
 		<key>09A556555E4DAEE8BCAB048D137E728F91D3B74E</key>
 		<string>https://github.com/marcioggs/iStalker.git</string>
+		<key>9F28870CE1E5210F4303240C7E32B28DABD573D2</key>
+		<string>https://github.com/michaelrbk/iStalker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iStalker.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>09A556555E4DAEE8BCAB048D137E728F91D3B74E</key>
+		<string>../../../iStalker-XCode6.4</string>
+		<key>9F28870CE1E5210F4303240C7E32B28DABD573D2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/marcioggs/iStalker.git</string>
+	<string>https://github.com/michaelrbk/iStalker.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>09A556555E4DAEE8BCAB048D137E728F91D3B74E</string>
+	<string>9F28870CE1E5210F4303240C7E32B28DABD573D2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9F28870CE1E5210F4303240C7E32B28DABD573D2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iStalker</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

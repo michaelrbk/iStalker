@@ -33,7 +33,35 @@ class SearchViewController: UIViewController {
             rvc.email = email
         }
     }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "showResultsSegue" {
+        
+        if (email.text.isEmpty || !email.text.isEmail() ) {
+        
+        let alert = UIAlertView()
+        alert.title = "Alerta"
+        alert.message = "Email inválido"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+        
+        return false
+    }
+        
+        else {
+        return true
+        }
+        }
+        
+        // by default, transition
+        return true
+    }
+}
 
-
+extension String {
+    func isEmail() -> Bool {
+    let regex = NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive, error: nil)
+    return regex?.firstMatchInString(self, options: nil, range: NSMakeRange(0, count(self))) != nil
+    }
 }
 
