@@ -41,7 +41,46 @@ class ResultsViewController: UIViewController {
     func showContact(c : JSON) {
         
         self.labelTeste.text = c["contactInfo"]["fullName"].string
-        print(c["contactInfo"]["fullName"])
+        
+        println("contactInfo.familyName: " + c["contactInfo"]["familyName"].string!)
+        println("contactInfo.givenName: " + c["contactInfo"]["givenName"].string!)
+        println("contactInfo.contactInfo: " +  c["contactInfo"]["fullName"].string!)
+        
+        println("contactInfo.middleNames: ")
+        if let middleNames = c["contactInfo"]["middleNames"].array {
+            for middleName in middleNames {
+                println(middleName.string)
+            }
+        } else {
+            println("Sem middleNames: ")
+        }
+        
+        println("contactInfo.websites: ")
+        if let websites = c["contactInfo"]["websites"].array {
+            for website in websites {
+                println(website["url"].string)
+            }
+        } else {
+            println("Sem websites")
+        }
+        
+        println("socialProfiles: ")
+        if let socialProfiles = c["socialProfiles"].array {
+            for socialProfile in socialProfiles {
+                println("typeId: " + socialProfile["typeId"].string!)
+                println("typeName: " + socialProfile["typeName"].string!)
+                println("id: " + socialProfile["id"].string!)
+                println("username: " + socialProfile["username"].string!)
+                println("url: " + socialProfile["url"].string!)
+                println("bio: " + socialProfile["bio"].string!)
+                println("rss: " + socialProfile["rss"].string!)
+                println("following: " + socialProfile["following"].string!)
+                println("followers: " + socialProfile["followers"].string!)
+            }
+        } else {
+            println("Sem socialProfiles")
+        }
+        
     }
     
     func showSearchContactLaterAlert() {
