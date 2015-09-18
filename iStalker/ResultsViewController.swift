@@ -9,20 +9,43 @@
 import UIKit
 import SwiftyJSON
 
-class ResultsViewController: UIViewController {
+class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
+    //TODO: Colocar imagem default de placeholder na foto da pessoa.
+    //TODO: Tentar passar closure para o facade em vez de referência desta classe.
     
     var email: UITextField!
     var facade = ContactFacade()
+    var testArray: NSMutableArray! = NSMutableArray()
     
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var labelTeste: UILabel!
+    @IBOutlet weak var socialNetworks: UITableView!
     
     override func viewDidLoad() {
         
         facade.rvc = self
         facade.findContact(email.text)
+        
+        //teste
+        testArray.addObject("teste1")
+        testArray.addObject("teste2")
+        testArray.addObject("teste3")
+        
+        socialNetworks.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell = self.socialNetworks.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        cell.textLabel!.text = (self.testArray.objectAtIndex(indexPath.row) as! String)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.testArray.count
     }
     
     func handleContactCallback(contact : JSON) {
