@@ -13,17 +13,18 @@ import SwiftyJSON
 class ContactFacade {
     
     var rvc : ResultsViewController?
+    let FULL_CONTACT_API_KEY: String = "252a1ebb9708464c"
     
-     func findContact(email: String) {
+    func findContact(email: String) {
         //email teste: "bart@fullcontact.com"
-        Alamofire.request(.GET, "https://api.fullcontact.com/v2/person.json", parameters: ["apiKey": "252a1ebb9708464c", "email" : email])
+        Alamofire.request(.GET, "https://api.fullcontact.com/v2/person.json", parameters: ["apiKey": FULL_CONTACT_API_KEY, "email" : email])
             .responseJSON { _, _, json, _ in
-            self.rvc?.setContactInView(JSON(json!))
+            self.rvc?.handleContactCallback(JSON(json!))
         }
         
     }
     
-    func getPhotoURL(contact : JSON, typeId : String) -> String? {
+    func getPhotoURL(contact: JSON, typeId: String) -> String? {
         var url : String?
         
         if let photos = contact["photos"].array {

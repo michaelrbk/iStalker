@@ -2,4 +2,99 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iStalker/ResultsViewController.swift"
+            timestampString = "464277193.895009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ResultsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iStalker.ResultsViewController.facade.getter : iStalker.ContactFacade"
+                  moduleName = "iStalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user113282/Desktop/Project/iStalker/iStalker/ResultsViewController.swift"
+                  timestampString = "464275498.30861"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iStalker.ResultsViewController.facade.setter : iStalker.ContactFacade"
+                  moduleName = "iStalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user113282/Desktop/Project/iStalker/iStalker/ResultsViewController.swift"
+                  timestampString = "464275498.309554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iStalker.ResultsViewController.facade.materializeForSet : iStalker.ContactFacade"
+                  moduleName = "iStalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user113282/Desktop/Project/iStalker/iStalker/ResultsViewController.swift"
+                  timestampString = "464275498.309671"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iStalker.ResultsViewController.init (iStalker.ResultsViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; iStalker.ResultsViewController"
+                  moduleName = "iStalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user113282/Desktop/Project/iStalker/iStalker/ResultsViewController.swift"
+                  timestampString = "464275498.309759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iStalker.ResultsViewController.init (iStalker.ResultsViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; iStalker.ResultsViewController"
+                  moduleName = "iStalker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user113282/Desktop/Project/iStalker/iStalker/ResultsViewController.swift"
+                  timestampString = "464275498.309846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "45">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -24,7 +24,7 @@ class ResultsViewController: UIViewController {
         facade.findContact(email.text)
     }
     
-    func setContactInView(contact : JSON) {
+    func handleContactCallback(contact : JSON) {
  
         switch (contact["status"].intValue) {
             case 200:
