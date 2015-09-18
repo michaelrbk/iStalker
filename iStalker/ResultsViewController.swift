@@ -16,12 +16,16 @@ class ResultsViewController: UIViewController {
     var email: UITextField!
     var facade = ContactFacade()
     
+    @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var labelTeste: UILabel!
     
     override func viewDidLoad() {
         
         facade.rvc = self
         facade.findContact(email.text)
+        
+        //TODO: Carregar a imagem no lugar certo e ver se é melhor fazer assíncrono.
+        Utils.loadImage(photo, url: "https://d2ojpxxtu63wzl.cloudfront.net/static/773aeb8bcf8aa718dee16ec057b16204_57ceacb97c05d725a9824b38658fb202eb1852d16702e51c360c47451b726dbb")
     }
     
     func handleContactCallback(contact : JSON) {

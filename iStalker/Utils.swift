@@ -18,4 +18,13 @@ class Utils : NSObject {
         alert.addButtonWithTitle("Ok")
         alert.show()
     }
+    
+    class func loadImage(view: UIImageView, url: String) {
+        if let url = NSURL(string: url) {
+            if let data = NSData(contentsOfURL: url){
+            view.contentMode = UIViewContentMode.ScaleAspectFit
+            view.image = UIImage(data: data)
+            }
+        }
+    }
 }
