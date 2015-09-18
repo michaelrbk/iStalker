@@ -23,9 +23,6 @@ class ResultsViewController: UIViewController {
         
         facade.rvc = self
         facade.findContact(email.text)
-        
-        //TODO: Baixar a foto no local correto e com a URL correta.
-        Utils.loadImageAsync(photo, url: "https://i.stack.imgur.com/Xs4RX.jpg?s=328&g=1")
     }
     
     func handleContactCallback(contact : JSON) {
@@ -45,6 +42,13 @@ class ResultsViewController: UIViewController {
     func showContact(c : JSON) {
         
         self.labelTeste.text = c["contactInfo"]["fullName"].string
+        
+        var primaryPhotoURL : String? = facade.getPrimaryPhotoURL(c)
+        if (primaryPhotoURL != nil) {
+            Utils.loadImageAsync(photo, url: primaryPhotoURL!)
+        }
+        
+        //----------- TESTE
         
         print("contactInfo.familyName: ")
         println(c["contactInfo"]["familyName"].string)

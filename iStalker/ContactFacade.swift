@@ -25,11 +25,27 @@ class ContactFacade {
     }
     
     func getPhotoURL(contact: JSON, typeId: String) -> String? {
-        var url : String?
+        var url: String?
         
         if let photos = contact["photos"].array {
             for photo in photos {
                 if (photo["typeId"].string == typeId) {
+                    url = photo["url"].string!
+                    break
+                }
+            }
+        }
+        
+        return url
+    }
+    
+    func getPrimaryPhotoURL(contact: JSON) -> String? {
+        var url: String?
+        
+        if let photos = contact["photos"].array {
+            for photo in photos {
+                var isPrimary : Bool? = photo["isPrimary"].bool
+                if (isPrimary != nil && isPrimary!) {
                     url = photo["url"].string!
                     break
                 }
