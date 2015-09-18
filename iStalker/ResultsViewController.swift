@@ -42,9 +42,14 @@ class ResultsViewController: UIViewController {
         
         self.labelTeste.text = c["contactInfo"]["fullName"].string
         
-        println("contactInfo.familyName: " + c["contactInfo"]["familyName"].string!)
-        println("contactInfo.givenName: " + c["contactInfo"]["givenName"].string!)
-        println("contactInfo.contactInfo: " +  c["contactInfo"]["fullName"].string!)
+        print("contactInfo.familyName: ")
+        println(c["contactInfo"]["familyName"].string)
+        
+        print("contactInfo.givenName: ")
+        println(c["contactInfo"]["givenName"].string)
+        
+        print("contactInfo.fullName: ")
+        println(c["contactInfo"]["fullName"].string)
         
         println("contactInfo.middleNames: ")
         if let middleNames = c["contactInfo"]["middleNames"].array {
@@ -67,17 +72,38 @@ class ResultsViewController: UIViewController {
         println("socialProfiles: ")
         if let socialProfiles = c["socialProfiles"].array {
             for socialProfile in socialProfiles {
-                println("typeId: " + socialProfile["typeId"].string!)
-                println("typeName: " + socialProfile["typeName"].string!)
-                println("id: " + socialProfile["id"].string!)
-                println("username: " + socialProfile["username"].string!)
-                println("url: " + socialProfile["url"].string!)
-                println("bio: " + socialProfile["bio"].string!)
-                println("rss: " + socialProfile["rss"].string!)
-                println("following: " + socialProfile["following"].string!)
-                println("followers: " + socialProfile["followers"].string!)
+                print("typeId: ")
+                println(socialProfile["typeId"].string)
                 
-                println("photo.url: " + facade.getPhotoURL(c, typeId: socialProfile["typeId"].string!)!)
+                print("typeName: ")
+                println(socialProfile["typeName"].string)
+                
+                print("id: ")
+                println(socialProfile["id"].string)
+                
+                print("username: ")
+                println(socialProfile["username"].string)
+                
+                print("url: ")
+                println(socialProfile["url"].string)
+                
+                print("bio: ")
+                println(socialProfile["bio"].string)
+                
+                print("rss: ")
+                println(socialProfile["rss"].string)
+                
+                print("following: ")
+                println(socialProfile["following"].string)
+                
+                print("followers: ")
+                println(socialProfile["followers"].string)
+                
+                print("photo.url: ")
+                if (socialProfile["typeId"].string != nil) {
+                    println(facade.getPhotoURL(c, typeId: socialProfile["typeId"].string!))
+                }
+                
             }
         } else {
             println("Sem socialProfiles")
