@@ -11,7 +11,6 @@ import SwiftyJSON
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
     //TODO: Colocar imagem default de placeholder na foto da pessoa.
     
     var email: UITextField!
@@ -21,9 +20,10 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var labelTeste: UILabel!
     @IBOutlet weak var socialNetworksTable: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
-        
+        activityIndicator.startAnimating()
         facade.findContact(email.text, callback: handleContactCallback)
     }
     
@@ -80,6 +80,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         contact = c
         self.socialNetworksTable.reloadData()
+        activityIndicator.stopAnimating()
         
         //----------- TESTE
         
