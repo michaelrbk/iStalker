@@ -175,4 +175,10 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         Utils.showAlert("Ocorreu um erro ao buscar esta pessoa.")
         //TODO: Voltar para tela de busca.
     }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var socialProfile: JSON = contact!["socialProfiles"][indexPath.row]
+        UIApplication.sharedApplication().openURL(NSURL(string: socialProfile["url"].string!)!)
+    }
 }
