@@ -17,15 +17,13 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.email.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if (segue.identifier == "showResultsSegue")	{
             var rvc = segue.destinationViewController as! ResultsViewController
             rvc.email = email
@@ -33,45 +31,35 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func hideKeyboard(sender: AnyObject) {
+        
         self.view.endEditing(true)
     }
     
     //Função utilizada para validar se a próxima interface pode ser chamada
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        
         if identifier == "showResultsSegue" {
         
             if (email.text.isEmpty || !email.text.isEmail() ) {
-                Utils.showAlert("Email inválido")
+                Utils.showAlert("Email inválido.")
                 return false
-            }
-            else
-            {
+            } else {
                 return true
             }
         }
-    
 
-        return true
+        return false
     }
     
     //Função para o enter chamar a próxima tela
     func textFieldShouldReturn(textField: UITextField) -> Bool {
             
-            email.resignFirstResponder()
-            if(self.shouldPerformSegueWithIdentifier("showResultsSegue", sender: self)){
-                    self.performSegueWithIdentifier("showResultsSegue", sender: self)
-            }
-            return true
+        email.resignFirstResponder()
+        if (self.shouldPerformSegueWithIdentifier("showResultsSegue", sender: self)) {
+            self.performSegueWithIdentifier("showResultsSegue", sender: self)
+        }
+        
+        return true
     }
     
-    
 }
-
-// Extensão da String para validar se a string é um email
-extension String {
-    func isEmail() -> Bool {
-    let regex = NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .CaseInsensitive, error: nil)
-    return regex?.firstMatchInString(self, options: nil, range: NSMakeRange(0, count(self))) != nil
-    }
-}
-
