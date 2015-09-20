@@ -11,8 +11,6 @@ import SwiftyJSON
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //TODO: Colocar imagem default de placeholder na foto da pessoa.
-    
     var email: UITextField!
     var facade: ContactFacade = ContactFacade()
     var contact: JSON?
