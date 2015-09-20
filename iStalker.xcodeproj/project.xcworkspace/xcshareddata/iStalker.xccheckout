@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C6F6B4BA-4256-438E-8873-4E7994116222</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>iStalker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9F28870CE1E5210F4303240C7E32B28DABD573D2</key>
 		<string>https://github.com/michaelrbk/iStalker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iStalker.xcodeproj/project.xcworkspace</string>
+	<string>iStalker.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9F28870CE1E5210F4303240C7E32B28DABD573D2</key>

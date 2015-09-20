@@ -16,36 +16,47 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     //TODO: Tentar passar closure para o facade em vez de referência desta classe.
     
     var email: UITextField!
-    var facade = ContactFacade()
-    var testArray: NSMutableArray! = NSMutableArray()
+    var facade: ContactFacade = ContactFacade()
+    var contact: JSON?
     
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var labelTeste: UILabel!
-    @IBOutlet weak var socialNetworks: UITableView!
+    @IBOutlet weak var socialNetworksTable: UITableView!
     
     override func viewDidLoad() {
         
         facade.rvc = self
         facade.findContact(email.text)
         
-        //teste
-        testArray.addObject("teste1")
-        testArray.addObject("teste2")
-        testArray.addObject("teste3")
-        
-        socialNetworks.rowHeight = UITableViewAutomaticDimension
+        socialNetworksTable.rowHeight = UITableViewAutomaticDimension
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell: UITableViewCell = self.socialNetworks.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        var cell: SocialNetworkCell = self.socialNetworksTable.dequeueReusableCellWithIdentifier("Cell") as! SocialNetworkCell
         
-        cell.textLabel!.text = (self.testArray.objectAtIndex(indexPath.row) as! String)
+        if (contact != nil) {
+            
+            var socialProfile: JSON = contact!["socialProfiles"][indexPath.row]
+            
+            cell.socialNetworkName.text = socialProfile["typeName"].string
+            
+            var typeId: String = socialProfile["typeId"].string!
+            var socialNetworkIconURL: String = facade.getSocialNetworkIconURL(typeId)
+            Utils.loadImageAsync(cell.socialNetworkIcon, url: socialNetworkIconURL)
+        }
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.testArray.count
+        var count: Int = 0
+        
+        if (contact != nil) {
+            count = contact!["socialProfiles"].count
+        }
+        
+        return count
     }
     
     func handleContactCallback(contact : JSON) {
@@ -70,6 +81,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         if (primaryPhotoURL != nil) {
             Utils.loadImageAsync(photo, url: primaryPhotoURL!)
         }
+        
+        contact = c
+        self.socialNetworksTable.reloadData()
         
         //----------- TESTE
         

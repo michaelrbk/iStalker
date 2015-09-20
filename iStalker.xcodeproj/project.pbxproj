@@ -20,6 +20,7 @@
 		70C901261BA785C50035C223 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C901251BA785C50035C223 /* Images.xcassets */; };
 		70C901291BA785C50035C223 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70C901271BA785C50035C223 /* LaunchScreen.xib */; };
 		70C901351BA785C50035C223 /* iStalkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C901341BA785C50035C223 /* iStalkerTests.swift */; };
+		70E7B2081BADED0400119DFB /* SocialNetworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E7B2071BADED0400119DFB /* SocialNetworkCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		70C9012E1BA785C50035C223 /* iStalkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iStalkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C901331BA785C50035C223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C901341BA785C50035C223 /* iStalkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iStalkerTests.swift; sourceTree = "<group>"; };
+		70E7B2071BADED0400119DFB /* SocialNetworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				70C901251BA785C50035C223 /* Images.xcassets */,
 				70C901271BA785C50035C223 /* LaunchScreen.xib */,
 				70C9011C1BA785C50035C223 /* Supporting Files */,
+				70E7B2071BADED0400119DFB /* SocialNetworkCell.swift */,
 			);
 			path = iStalker;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C901211BA785C50035C223 /* SearchViewController.swift in Sources */,
+				70E7B2081BADED0400119DFB /* SocialNetworkCell.swift in Sources */,
 				70C9011F1BA785C50035C223 /* AppDelegate.swift in Sources */,
 				70646C9A1BA86F91005F14E3 /* ContactFacade.swift in Sources */,
 				70646C9C1BA86FB2005F14E3 /* Utils.swift in Sources */,
