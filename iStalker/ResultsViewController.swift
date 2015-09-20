@@ -13,7 +13,6 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //TODO: Colocar spinner de loading enquanto nao terminou de carregar os dados.
     //TODO: Colocar imagem default de placeholder na foto da pessoa.
-    //TODO: Tentar passar closure para o facade em vez de referência desta classe.
     
     var email: UITextField!
     var facade: ContactFacade = ContactFacade()
@@ -25,10 +24,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         
-        facade.rvc = self
-        facade.findContact(email.text)
-        
-        socialNetworksTable.rowHeight = UITableViewAutomaticDimension
+        facade.findContact(email.text, callback: handleContactCallback)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -59,7 +55,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         return count
     }
     
-    func handleContactCallback(contact : JSON) {
+    func handleContactCallback(contact: JSON) {
  
         switch (contact["status"].intValue) {
             case 200:
