@@ -18,7 +18,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     var contact: JSON?
     
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var labelTeste: UILabel!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var socialNetworksTable: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -79,11 +80,26 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func showContact(c : JSON) {
         
-        self.labelTeste.text = c["contactInfo"]["fullName"].string
-        
         var primaryPhotoURL : String? = facade.getPrimaryPhotoURL(c)
         if (primaryPhotoURL != nil) {
             Utils.loadImageAsync(photo, url: primaryPhotoURL!)
+        }
+        
+        self.fullName.text = c["contactInfo"]["fullName"].string
+        
+        var gender:String? = c["demographics"]["gender"].string
+        
+        if (gender == nil) {
+            self.gender.text = ""
+        } else {
+            switch (gender!) {
+                case "Male":
+                    self.gender.text = "Masculino"
+                case "Female":
+                    self.gender.text = "Feminino"
+                default:
+                    self.gender.text = ""
+            }
         }
         
         contact = c
