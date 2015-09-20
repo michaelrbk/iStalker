@@ -35,11 +35,19 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             
             var socialProfile: JSON = contact!["socialProfiles"][indexPath.row]
             
-            cell.socialNetworkName.text = socialProfile["typeName"].string
+            cell.name.text = socialProfile["typeName"].string
             
             var typeId: String = socialProfile["typeId"].string!
             var socialNetworkIconURL: String = facade.getSocialNetworkIconURL(typeId)
-            Utils.loadImageAsync(cell.socialNetworkIcon, url: socialNetworkIconURL)
+            Utils.loadImageAsync(cell.icon, url: socialNetworkIconURL)
+            
+            var username: String? = socialProfile["username"].string
+            if (username != nil) {
+                    cell.userName.text = "@" + socialProfile["username"].string!
+            } else {
+                    cell.userName.text = ""
+            }
+            
         }
         
         return cell

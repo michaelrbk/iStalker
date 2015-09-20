@@ -13,6 +13,7 @@ import SwiftyJSON
 class ContactFacade {
     
     let FULL_CONTACT_API_KEY: String = "252a1ebb9708464c"
+    //let FULL_CONTACT_API_KEY: String = "f03b8de1c87465" //Chave alternativa
     
     func findContact(email: String, callback: (JSON)->()) {
         //email teste: "bart@fullcontact.com"

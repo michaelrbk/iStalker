@@ -9,7 +9,9 @@
 import UIKit
 
 class SocialNetworkCell: UITableViewCell {
-    @IBOutlet weak var socialNetworkName: UILabel!
-    @IBOutlet weak var socialNetworkIcon: UIImageView!
+
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var userName: UILabel!
 
 }
