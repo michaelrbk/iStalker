@@ -180,6 +180,20 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         Utils.showAlert("Estamos preparando os dados desta pessoa. Procure novamente em 5 minutos.")
         returnToLastSceen()
+        
+        //TODO: Pedir para mostrar notificação após clicar no botão OK do Alert.
+        //TODO: Colocar ação pra quando clicar na notificação abrir a tela de resultado. Ver como persistir o e-mail usado.
+//        if(UIApplication.instancesRespondToSelector(Selector("registerUserNotificationSettings:"))) {
+//            UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: nil))
+//        }
+//        
+//        var not: UILocalNotification = UILocalNotification()
+//        not.alertAction = "view details"
+//        not.alertBody = "Tente pesquisar novamente pelo contato."
+//        not.fireDate = NSDate(timeIntervalSinceNow: 300)
+//        not.soundName = UILocalNotificationDefaultSoundName
+//        
+//        UIApplication.sharedApplication().scheduleLocalNotification(not)
     }
 
     func showContactNotFoundAlert() {
