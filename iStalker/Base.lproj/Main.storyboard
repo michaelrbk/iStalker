@@ -133,6 +133,7 @@
                         <outlet property="labelTeste" destination="sR9-IN-nyI" id="n45-FT-OjY"/>
                         <outlet property="photo" destination="nX7-xa-SPk" id="uUg-7m-tgE"/>
                         <outlet property="socialNetworksTable" destination="gzH-HS-fLg" id="sJc-QX-Cyf"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="returnToSearchSegue" id="V2X-jz-lb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUQ-ck-Rrv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,4 +159,7 @@
             <point key="canvasLocation" x="372" y="784"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="V2X-jz-lb2"/>
+    </inferredMetricsTieBreakers>
 </document>

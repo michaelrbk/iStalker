@@ -10,9 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController,UITextFieldDelegate {
     //TODO: Se o serviço retornar pra tentar em 2min, posteriormente enviar notificação. Quando clicar na notificação abrir a tela de resultado.
-    //TODO: Ver como documentar métodos.
     //TODO: Colocar ícone do app.
-    //TODO: Copiar retorno do web service e mockar na aplicação para não estourar a cota de chamadas.
 
     @IBOutlet weak var email: UITextField!
     

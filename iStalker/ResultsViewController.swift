@@ -90,8 +90,10 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.socialNetworksTable.reloadData()
         activityIndicator.stopAnimating()
         
-        //----------- TESTE
-        
+        logContactData(c)
+    }
+    
+    func logContactData(c: JSON) {
         print("contactInfo.familyName: ")
         println(c["contactInfo"]["familyName"].string)
         
@@ -158,22 +160,28 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             println("Sem socialProfiles")
         }
-        
     }
     
     func showSearchContactLaterAlert() {
+        
         Utils.showAlert("Estamos preparando os dados desta pessoa. Procure novamente em 5 minutos.")
-        //TODO: Voltar para tela de busca.
+        returnToLastSceen()
     }
 
     func showContactNotFoundAlert() {
+        
         Utils.showAlert("Pessoa não encontrada.")
-        //TODO: Voltar para tela de busca.
+        returnToLastSceen()
     }
     
     func showErrorAlert() {
+        
         Utils.showAlert("Ocorreu um erro ao buscar esta pessoa.")
-        //TODO: Voltar para tela de busca.
+        returnToLastSceen()
+    }
+    
+    func returnToLastSceen() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
