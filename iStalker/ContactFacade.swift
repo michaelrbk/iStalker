@@ -56,7 +56,7 @@ class ContactFacade {
     }
     
     func getSocialNetworkIconURL(typeId : String) -> String {
-        return "https://api.fullcontact.com/v2/icon/" + typeId + "/32/default?apiKey=" + FULL_CONTACT_API_KEY
+        return "https://api.fullcontact.com/v2/icon/" + typeId + "/64/default?apiKey=" + FULL_CONTACT_API_KEY
     }
     
 }
