@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iStalker/ResultsViewController.swift"
-            timestampString = "464653245.149933"
+            timestampString = "464654613.884766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "showContact(_:)"
             landmarkType = "5">
          </BreakpointContent>

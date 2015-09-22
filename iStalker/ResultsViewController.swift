@@ -25,6 +25,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         activityIndicator.startAnimating()
         facade.findContact(email.text, callback: handleContactCallback)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         hideTableViewFooter()
     }
     
@@ -48,6 +49,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             var typeId: String = socialProfile["typeId"].string!
             var socialNetworkIconURL: String = facade.getSocialNetworkIconURL(typeId)
             Utils.loadImageAsync(cell.icon, url: socialNetworkIconURL)
+            cell.icon.layer.cornerRadius = 26
+            cell.icon.layer.masksToBounds = true
             
             var username: String? = socialProfile["username"].string
             if (username != nil) {
@@ -90,6 +93,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         var primaryPhotoURL : String? = facade.getPrimaryPhotoURL(c)
         if (primaryPhotoURL != nil) {
             Utils.loadImageAsync(photo, url: primaryPhotoURL!)
+            photo.layer.cornerRadius = 25
+            photo.layer.masksToBounds = true
         }
         
         self.fullName.text = c["contactInfo"]["fullName"].string

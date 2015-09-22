@@ -142,7 +142,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unknown" translatesAutoresizingMaskIntoConstraints="NO" id="nX7-xa-SPk">
-                                <rect key="frame" x="16" y="72" width="80" height="74"/>
+                                <rect key="frame" x="16" y="66" width="80" height="80"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
