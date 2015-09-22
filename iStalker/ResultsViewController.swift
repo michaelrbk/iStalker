@@ -25,6 +25,14 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         activityIndicator.startAnimating()
         facade.findContact(email.text, callback: handleContactCallback)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        hideTableViewFooter()
+    }
+    
+    func hideTableViewFooter() {
+        var tblView =  UIView(frame: CGRectZero)
+        socialNetworksTable.tableFooterView = tblView
+        socialNetworksTable.tableFooterView!.hidden = true
+        socialNetworksTable.backgroundColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -222,5 +230,6 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
     
 }
