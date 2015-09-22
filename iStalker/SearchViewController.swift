@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchViewController: UIViewController,UITextFieldDelegate {
-    //TODO: Colocar ícone do app.
 
     @IBOutlet weak var email: UITextField!
     
