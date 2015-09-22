@@ -24,6 +24,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         activityIndicator.startAnimating()
         facade.findContact(email.text, callback: handleContactCallback)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -104,7 +105,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.socialNetworksTable.reloadData()
         activityIndicator.stopAnimating()
         
-        logContactData(c)
+        //	logContactData(c)
     }
     
     func logContactData(c: JSON) {
@@ -217,4 +218,9 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         var socialProfile: JSON = contact!["socialProfiles"][indexPath.row]
         UIApplication.sharedApplication().openURL(NSURL(string: socialProfile["url"].string!)!)
     }
+
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
 }

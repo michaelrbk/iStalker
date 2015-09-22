@@ -17,6 +17,7 @@ class SearchViewController: UIViewController,UITextFieldDelegate {
         
         super.viewDidLoad()
         self.email.delegate = self
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
